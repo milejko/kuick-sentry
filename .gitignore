@@ -1,0 +1,11 @@
+composer.lock
+.phpunit*
+/.idea
+/.php*
+/vendor/
+.DS_Store
+/var
+version.*
+/.env.local
+clover.xml
+/tests/Unit/Mocks/project-dir/var*
