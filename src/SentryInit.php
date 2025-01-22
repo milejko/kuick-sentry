@@ -22,7 +22,7 @@ class SentryInit
     public function __construct(SentryConfig $config)
     {
         //sentry disabled
-        if (!$config->enabled) {
+        if (!(bool) $config->enabled) {
             return;
         }
         //defining ignored
@@ -33,7 +33,7 @@ class SentryInit
             'dsn' => $config->dsn,
             'release' => $config->release,
             //prevent quota issues
-            'traces_sample_rate' => $config->sampleRate,
+            'traces_sample_rate' => (float) $config->sampleRate,
             //environment - configured, or guessed by config class name
             'environment' => $config->environment,
             //before send event
