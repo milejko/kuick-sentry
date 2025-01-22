@@ -1,7 +1,9 @@
 <?php
 
 use Kuick\Sentry\SentryConfig;
+use Kuick\Sentry\SentryInit;
 
+use function DI\autowire;
 use function DI\create;
 use function DI\env;
 
@@ -16,4 +18,5 @@ return [
             ignoreCode: env('SENTRY_IGNORE_CODE', ''),
             release: env('SENTRY_RELEASE', ''),
         ),
+    SentryInit::class => autowire(),
 ];
