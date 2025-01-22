@@ -1,7 +1,7 @@
 {
     "name": "kuick/sentry",
     "type": "library",
-    "description": "Kuick Sentry provides a bridge to Sentry",
+    "description": "Kuick Sentry provides a bridge to Sentry for Kuick applications.",
     "keywords": ["kuick", "sentry"],
     "license": "MIT",
     "authors": [
