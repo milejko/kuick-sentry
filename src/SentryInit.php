@@ -1,18 +1,29 @@
 <?php
 
+/**
+ * Kuick Sentry (https://github.com/milejko/kuick-sentry)
+ *
+ * @link       https://github.com/milejko/kuick-sentry.git
+ * @copyright  Copyright (c) 2024 Mariusz Miłejko (mariusz@milejko.pl)
+ * @license    https://en.wikipedia.org/wiki/BSD_licenses New BSD License
+ */
+
 namespace Kuick\Sentry;
 
 use Sentry\Event;
 
 use function Sentry\init;
 
+/**
+ * Sentry initialization class
+ */
 class SentryInit
 {
     public function __construct(SentryConfig $config)
     {
         //sentry disabled
         if (!$config->enabled) {
-            return false;
+            return;
         }
         //defining ignored
         define('SENTRY_IGNORED_EXCEPTIONS', explode(',', $config->ignoredExceptions));
