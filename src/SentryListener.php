@@ -20,7 +20,7 @@ use function Sentry\captureException;
  */
 class SentryListener
 {
-    public function __construct(private SentryInit $sentryInit)
+    public function __construct(SentryInit $sentryInit)
     {
         $sentryInit->isInitialized() || throw new  RuntimeException('Sentry is not initialized');
     }
