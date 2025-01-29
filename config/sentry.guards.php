@@ -13,7 +13,7 @@ use Kuick\Framework\Config\GuardConfig;
 
 return [
     new GuardConfig(
-        '/api/sentry-exception',
+        '/api/sentry.+',
         OpsGuard::class
     )
 ];
