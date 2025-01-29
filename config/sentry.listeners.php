@@ -8,6 +8,13 @@
  * @license    https://github.com/milejko/kuick-sentry?tab=MIT-1-ov-file New BSD License
  */
 
-return [
+use Kuick\Framework\Config\ListenerConfig;
+use Kuick\Framework\Events\ExceptionRaisedEvent;
+use Kuick\Sentry\SentryListener;
 
+return [
+    new ListenerConfig(
+        ExceptionRaisedEvent::class,
+        SentryListener::class,
+    ),
 ];
