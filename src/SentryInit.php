@@ -19,6 +19,8 @@ use function Sentry\init;
  */
 class SentryInit
 {
+    private bool $initialized = false;
+
     public function __construct(SentryConfig $config)
     {
         //sentry disabled
@@ -54,5 +56,11 @@ class SentryInit
                 return $event;
             },
         ]);
+        $this->initialized = true;
+    }
+
+    public function isInitialized(): bool
+    {
+        return $this->initialized;
     }
 }

@@ -11,6 +11,7 @@
 namespace Kuick\Sentry;
 
 use Kuick\Framework\Events\ExceptionRaisedEvent;
+use RuntimeException;
 
 use function Sentry\captureException;
 
@@ -19,6 +20,11 @@ use function Sentry\captureException;
  */
 class SentryListener
 {
+    public function __construct(private SentryInit $sentryInit)
+    {
+        $sentryInit->isInitialized() || throw new  RuntimeException('Sentry is not initialized');
+    }
+
     public function __invoke(ExceptionRaisedEvent $exceptionRaisedEvent): void
     {
         captureException($exceptionRaisedEvent->getException());
