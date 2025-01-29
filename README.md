@@ -7,3 +7,11 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?cacheSeconds=14400)](LICENSE)
 
 # A Sentry bridge for applications based on Kuick Framework
+
+## Available environment variables:
+```
+SENTRY_DSN=https://username:password@sentry.io/1
+SENTRY_ENABLED=1
+SENTRY_SAMPLE_RATE=1.0
+SENTRY_RELEASE=v1.0.0
+```
