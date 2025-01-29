@@ -23,7 +23,8 @@
         <directory suffix=".php">./src</directory>
         </include>
         <report>
-        <text outputFile="php://stdout"></text>
+        <text outputFile="php://stdout" />
+        <html outputDirectory=".phpunit" />
         <clover outputFile="clover.xml" />
         </report>
     </coverage>

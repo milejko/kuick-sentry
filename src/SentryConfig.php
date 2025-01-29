@@ -20,8 +20,6 @@ class SentryConfig
         public readonly string $enabled = '0',
         public readonly string $environment = 'LOCAL',
         public readonly string $sampleRate = '1.0',
-        public readonly string $ignoredExceptions = '',
-        public readonly string $ignoreCode = '',
         public readonly string $release = '',
     ) {
     }

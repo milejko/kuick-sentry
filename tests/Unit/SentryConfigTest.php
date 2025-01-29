@@ -17,16 +17,12 @@ class SentryConfigTest extends TestCase
             enabled: '0',
             environment: 'environment',
             sampleRate: '1.0',
-            ignoredExceptions: 'ignoredExceptions',
-            ignoreCode: 'ignoreCode',
             release: 'release',
         );
         $this->assertEquals('dsn', $config->dsn);
         $this->assertFalse((bool) $config->enabled);
         $this->assertEquals('environment', $config->environment);
         $this->assertEquals(1.0, (float) $config->sampleRate);
-        $this->assertEquals('ignoredExceptions', $config->ignoredExceptions);
-        $this->assertEquals('ignoreCode', $config->ignoreCode);
         $this->assertEquals('release', $config->release);
     }
 }

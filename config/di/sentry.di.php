@@ -9,7 +9,7 @@
  */
 
 use Kuick\Sentry\SentryConfig;
-use Kuick\Sentry\SentryInit;
+use Kuick\Sentry\SentryInitializer;
 use Kuick\Sentry\SentryListener;
 
 use function DI\autowire;
@@ -23,10 +23,8 @@ return [
             dsn: env('SENTRY_DSN', ''),
             environment: env('SENTRY_ENVIRONMENT', 'LOCAL'),
             sampleRate: env('SENTRY_SAMPLE_RATE', '1.0'),
-            ignoredExceptions: env('SENTRY_IGNORED_EXCEPTIONS', ''),
-            ignoreCode: env('SENTRY_IGNORE_CODE', ''),
             release: env('SENTRY_RELEASE', ''),
         ),
-    SentryInit::class => autowire(),
+    SentryInitializer::class => autowire(),
     SentryListener::class => autowire(),
 ];
