@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": ">=8.2.0",
+        "kuick/framework": "^2.2",
         "nyholm/dsn": "^2.0",
         "sentry/sentry": "^4.10"
     },
