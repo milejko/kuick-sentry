@@ -9,6 +9,7 @@
  */
 
 use Kuick\Sentry\SentryConfig;
+use Kuick\Sentry\SentryExceptionController;
 use Kuick\Sentry\SentryInitializer;
 use Kuick\Sentry\SentryListener;
 
@@ -25,6 +26,8 @@ return [
             sampleRate: env('SENTRY_SAMPLE_RATE', '1.0'),
             release: env('SENTRY_RELEASE', ''),
         ),
+    // performance optimization for autowiring
     SentryInitializer::class => autowire(),
     SentryListener::class => autowire(),
+    SentryExceptionController::class => autowire(),
 ];
