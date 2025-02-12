@@ -10,14 +10,13 @@
 
 use Kuick\Framework\Config\RouteConfig;
 use Kuick\Http\Message\RequestInterface;
+use Kuick\Sentry\SentryExceptionController;
 
 return [
     // sentry integration testing route
     new RouteConfig(
-        '/api/ops/sentry/exception',
-        function (): void {
-            throw new RuntimeException('Test exception for sentry integration');
-        },
+        '/api/sentry/exception',
+        SentryExceptionController::class,
         [RequestInterface::METHOD_PUT]
     ),
 ];
