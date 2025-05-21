@@ -25,12 +25,17 @@ class SentryInitializer
         if (!(bool) $config->enabled) {
             return;
         }
+        /**
+         * @var array<class-string>
+         */
+        $ignoreExceptions = explode(',', $config->ignoreExceptions);
         //sentry initialization
         init([
             'dsn' => $config->dsn,
             'release' => $config->release,
             //prevent quota issues
             'traces_sample_rate' => (float) $config->sampleRate,
+            'ignore_exceptions' => $ignoreExceptions,
             //environment name
             'environment' => $config->environment,
         ]);

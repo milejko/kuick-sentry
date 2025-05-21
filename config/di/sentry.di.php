@@ -8,6 +8,7 @@
  * @license    https://github.com/milejko/kuick-sentry?tab=MIT-1-ov-file New BSD License
  */
 
+use Kuick\Http\HttpException;
 use Kuick\Sentry\SentryConfig;
 use Kuick\Sentry\SentryExceptionController;
 use Kuick\Sentry\SentryInitializer;
@@ -25,6 +26,7 @@ return [
             environment: env('SENTRY_ENVIRONMENT', 'LOCAL'),
             sampleRate: env('SENTRY_SAMPLE_RATE', '1.0'),
             release: env('SENTRY_RELEASE', ''),
+            ignoreExceptions: env('SENTRY_IGNORE_EXCEPTIONS', HttpException::class),
         ),
     // performance optimization for autowiring
     SentryInitializer::class => autowire(),
