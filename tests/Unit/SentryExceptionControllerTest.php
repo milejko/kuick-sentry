@@ -3,12 +3,11 @@
 namespace Tests\Unit\Kuick\Sentry;
 
 use Kuick\Sentry\SentryExceptionController;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
-/**
- * @covers \Kuick\Sentry\SentryExceptionController
- */
+#[CoversClass(SentryExceptionController::class)]
 class SentryExceptionControllerTest extends TestCase
 {
     public function testIfControllerThrowsException(): void

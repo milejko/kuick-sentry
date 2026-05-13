@@ -3,11 +3,10 @@
 namespace Tests\Unit\Kuick\Sentry;
 
 use Kuick\Sentry\SentryConfig;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \Kuick\Sentry\SentryConfig
- */
+#[CoversClass(SentryConfig::class)]
 class SentryConfigTest extends TestCase
 {
     public function testIfConfigIsProperlyBuilt(): void

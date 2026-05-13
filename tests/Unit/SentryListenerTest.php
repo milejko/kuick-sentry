@@ -7,12 +7,11 @@ use Kuick\Framework\Events\ExceptionRaisedEvent;
 use Kuick\Sentry\SentryConfig;
 use Kuick\Sentry\SentryInitializer;
 use Kuick\Sentry\SentryListener;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 
-/**
- * @covers \Kuick\Sentry\SentryListener
- */
+#[CoversClass(SentryListener::class)]
 class SentryListenerTest extends TestCase
 {
     public function testIfListenerSendsExceptionsToSentry(): void
@@ -27,6 +26,8 @@ class SentryListenerTest extends TestCase
         $exceptionRaisedEvent = new ExceptionRaisedEvent(new Exception('Test exception'));
         $sentryListener->__invoke($exceptionRaisedEvent);
         $this->assertInstanceOf(SentryListener::class, $sentryListener);
+        restore_error_handler();
+        restore_exception_handler();
     }
 
     public function testIfListenerDoesNothingIfSentryIsNotInitialized(): void

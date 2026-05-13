@@ -4,12 +4,11 @@ namespace Tests\Unit\Kuick\Sentry;
 
 use Kuick\Sentry\SentryConfig;
 use Kuick\Sentry\SentryInitializer;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \Kuick\Sentry\SentryInitializer
- */
-class SentryInitTest extends TestCase
+#[CoversClass(SentryInitializer::class)]
+class SentryInitializerTest extends TestCase
 {
     public function testIfEmptyConfig(): void
     {
