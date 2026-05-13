@@ -8,12 +8,14 @@ use Kuick\Sentry\SentryConfig;
 use Kuick\Sentry\SentryInitializer;
 use Kuick\Sentry\SentryListener;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 
 #[CoversClass(SentryListener::class)]
 class SentryListenerTest extends TestCase
 {
+    #[RunInSeparateProcess]
     public function testIfListenerSendsExceptionsToSentry(): void
     {
         $config = new SentryConfig(
